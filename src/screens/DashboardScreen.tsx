@@ -26,6 +26,7 @@ const FOOD_ILLUSTRATION = require('../../design/figma/assets/undraw-personal-sit
 const APP_ILLUSTRATION = require('../../design/figma/assets/illustration-120x133.png');
 const USER_ICON = require('../../design/figma/assets/noun-user-1335326.png');
 const SEARCH_ICON = require('../../design/figma/assets/search-1.png');
+const MENU_ICON = require('../../design/figma/assets/noun-menu-933312.png');
 
 type CardProps = {
   testID: string;
@@ -78,9 +79,7 @@ export default function DashboardScreen({ navigation }: Props) {
             style={styles.menuButton}
             hitSlop={10}
           >
-            <View style={styles.menuBar} />
-            <View style={styles.menuBar} />
-            <View style={styles.menuBar} />
+            <Image source={MENU_ICON} style={styles.menuIcon} resizeMode="contain" />
           </Pressable>
           <Text style={styles.headerTitle}>Dashboard</Text>
           <Image source={USER_ICON} style={styles.userIcon} resizeMode="contain" />
@@ -164,13 +163,10 @@ const styles = StyleSheet.create({
     top: 33,
     width: 18,
     height: 15,
-    justifyContent: 'space-between',
   },
-  menuBar: {
+  menuIcon: {
     width: 18,
-    height: 2,
-    borderRadius: 1,
-    backgroundColor: colors.onAccent,
+    height: 15,
   },
   headerTitle: {
     ...typography.screenTitle,
