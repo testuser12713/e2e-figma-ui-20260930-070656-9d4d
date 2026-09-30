@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>businesshandler — Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .dash-head { display: flex; align-items: center; justify-content: space-between; padding: 26px 40px 10px 40px; }
+  .dash-head .hi { font-family: var(--font-family); font-weight: 700; font-size: 24px; line-height: 29px; color: var(--color-fg); }
+  .dash-head .hi small { display: block; font-family: var(--font-family-body); font-weight: 400; font-size: 13px; line-height: 16px; color: var(--color-muted); margin-top: 3px; }
+  .pad-card { padding: 0 39px 0 39px; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+  .stat-card { padding: 20px 18px; min-height: 118px; }
+  .stat-card .lbl { font-family: var(--font-family-body); font-weight: 100; font-size: 12px; line-height: 15px; letter-spacing: 2.4px; text-transform: uppercase; color: #000; }
+  .stat-card .val { margin-top: 12px; font-family: var(--font-family-body); font-weight: 500; font-size: 24px; line-height: 30px; color: var(--color-fg); }
+  .stat-card .delta { margin-top: 6px; font-family: var(--font-family-body); font-weight: 400; font-size: 12px; line-height: 14px; color: var(--color-accent); }
+  .stat-card .delta.neutral { color: var(--color-fg); }
+  .section-title { margin: 28px 39px 0 39px; }
+  .chart-card { margin: 14px 39px 0 39px; padding: 24px 20px 22px; }
+  .chart { display: flex; align-items: flex-end; justify-content: space-between; height: 180px; }
+  .bar { width: 13px; height: 180px; position: relative; }
+  .bar .track { position: absolute; inset: 0; background: var(--color-dot); border-radius: 3px; }
+  .bar .deposit { position: absolute; left: 0; right: 0; bottom: 0; background: #2B2B2B; border-radius: 3px; }
+  .bar .expense { position: absolute; left: 0; right: 0; background: var(--color-accent); border-radius: 3px; }
+  .chart-labels { display: flex; justify-content: space-between; margin-top: 10px; }
+  .chart-labels span { font-family: var(--font-family-body); font-weight: 100; font-size: 9px; line-height: 11px; letter-spacing: 1.8px; text-transform: uppercase; color: #000; }
+  .legend { display: flex; gap: 32px; margin-top: 24px; }
+  .legend .lg { display: flex; align-items: center; gap: 8px; }
+  .legend .sw { width: 13px; height: 13px; border-radius: 3px; }
+  .legend .lg span { font-family: var(--font-family-body); font-weight: 100; font-size: 9px; line-height: 11px; letter-spacing: 1.8px; text-transform: uppercase; color: #000; }
+  .menu-card { margin: 24px 39px 0 39px; overflow: hidden; }
+  .menu-trigger { display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 20px; cursor: pointer; }
+  .menu-trigger .mt-ic { display: flex; }
+  .menu-trigger .mt-lbl { flex: 1; font-family: var(--font-family); font-weight: 700; font-size: 14px; line-height: 17px; color: var(--color-fg-strong); }
+  .menu-trigger .chev { transition: transform .2s ease-out; }
+  .menu-trigger.open .chev { transform: rotate(180deg); }
+  .menu-body { max-height: 0; overflow: hidden; transition: max-height .2s ease-out; }
+  .menu-row { display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 20px; border-top: 1px solid var(--color-divider); }
+  .menu-row .mr-ic { display: flex; }
+  .menu-row .mr-lbl { flex: 1; font-family: var(--font-family); font-weight: 700; font-size: 14px; line-height: 17px; color: var(--color-fg-strong); }
+</style>
+</head>
+<body>
+<div class="screen" data-od-id="dashboard-screen">
+  <div class="scroll">
+    <header class="dash-head" data-od-id="dashboard-header">
+      <div class="hi">Good morning<small>Tuesday, 16 April</small></div>
+      <div class="avatar" data-od-id="dashboard-avatar">R</div>
+    </header>
+
+    <div class="pad-card">
+      <div class="stats-grid" data-od-id="dashboard-stats">
+        <a class="card stat-card" href="dashboard-stats.html" data-od-id="stat-card-income">
+          <div class="lbl">Income</div>
+          <div class="val">3,240.00&euro;</div>
+          <div class="delta">+4.2%</div>
+        </a>
+        <a class="card stat-card" href="dashboard-stats.html" data-od-id="stat-card-expenses">
+          <div class="lbl">Expenses</div>
+          <div class="val">1,345.00&euro;</div>
+          <div class="delta neutral">-2.1%</div>
+        </a>
+        <a class="card stat-card" href="dashboard-stats.html" data-od-id="stat-card-savings">
+          <div class="lbl">Savings</div>
+          <div class="val">5,800.00&euro;</div>
+          <div class="delta">+12.0%</div>
+        </a>
+        <a class="card stat-card" href="dashboard-stats.html" data-od-id="stat-card-budget">
+          <div class="lbl">Budget</div>
+          <div class="val">900.00&euro;</div>
+          <div class="delta neutral">on track</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="section-title section-label" data-od-id="dashboard-chart-title">Weekly Report</div>
+
+    <div class="card chart-card" data-od-id="dashboard-chart">
+      <div class="chart">
+        <div class="bar"><div class="track"></div><div class="deposit" style="height:34%"></div><div class="expense" style="height:40%;bottom:34%"></div></div>
+        <div class="bar"><div class="track"></div><div class="deposit" style="height:22%"></div><div class="expense" style="height:52%;bottom:22%"></div></div>
+        <div class="bar"><div class="track"></div><div class="deposit" style="height:40%"></div><div class="expense" style="height:30%;bottom:40%"></div></div>
+        <div class="bar"><div class="track"></div><div class="deposit" style="height:30%"></div><div class="expense" style="height:46%;bottom:30%"></div></div>
+        <div class="bar"><div class="track"></div><div class="deposit" style="height:18%"></div><div class="expense" style="height:58%;bottom:18%"></div></div>
+        <div class="bar"><div class="track"></div><div class="deposit" style="height:26%"></div><div class="expense" style="height:38%;bottom:26%"></div></div>
+        <div class="bar"><div class="track"></div><div class="deposit" style="height:44%"></div><div class="expense" style="height:32%;bottom:44%"></div></div>
+      </div>
+      <div class="chart-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+      <div class="legend" data-od-id="dashboard-chart-legend">
+        <div class="lg"><span class="sw" style="background:#6CC57C"></span><span>Expenses</span></div>
+        <div class="lg"><span class="sw" style="background:#2B2B2B"></span><span>Deposit</span></div>
+      </div>
+    </div>
+
+    <div class="card menu-card" id="dash-menu" data-od-id="dashboard-menu">
+      <div class="menu-trigger" id="menu-trigger" data-od-id="dashboard-menu-trigger">
+        <span class="mt-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
+        <span class="mt-lbl">More options</span>
+        <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="menu-body" id="menu-body">
+        <a class="menu-row" href="dashboard-menu.html" data-od-id="menu-row-menu">
+          <span class="mr-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+          <span class="mr-lbl">Menu</span>
+        </a>
+        <a class="menu-row" href="dashboard-stats.html" data-od-id="menu-row-stats">
+          <span class="mr-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+          <span class="mr-lbl">Stats</span>
+        </a>
+        <a class="menu-row" href="time-management.html" data-od-id="menu-row-schedule">
+          <span class="mr-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span class="mr-lbl">Schedule</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="tabbar" data-od-id="tabbar">
+    <div class="tabs-side">
+      <a class="tab active" href="dashboard.html" data-od-id="tab-dashboard">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="tab" href="money-management.html" data-od-id="tab-money">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6 10.5v3M18 10.5v3"/></svg>
+        <span>Money</span>
+      </a>
+    </div>
+    <div class="fab-slot"></div>
+    <div class="tabs-side">
+      <a class="tab" href="time-management.html" data-od-id="tab-time">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Time</span>
+      </a>
+    </div>
+    <a class="fab" href="money-management-3.html" aria-label="Add" data-od-id="fab">
+      <svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 0V20M0 10H20" stroke="#fff" stroke-width="3"/></svg>
+    </a>
+  </nav>
+</div>
+
+<script>
+  var trigger = document.getElementById('menu-trigger');
+  var body = document.getElementById('menu-body');
+  trigger.addEventListener('click', function () {
+    var open = trigger.classList.toggle('open');
+    body.style.maxHeight = open ? body.scrollHeight + 'px' : '0';
+  });
+</script>
+</body>
+</html>

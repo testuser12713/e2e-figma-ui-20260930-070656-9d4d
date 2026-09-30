@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>businesshandler — Add Expense</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .add-form { display: flex; flex-direction: column; align-items: center; padding-top: 20px; }
+  .add-btn { margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="screen" data-od-id="money-3-screen">
+  <header class="head-a" data-od-id="money-3-header">
+    <a class="btn-back-round" href="money-management.html" aria-label="Back" data-od-id="money-3-back">
+      <svg viewBox="0 0 11 18" fill="none"><path d="M9.5 1L2 9l7.5 8" stroke="#181461" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <span class="head-title" data-od-id="money-3-title">Add Expense</span>
+  </header>
+
+  <div class="scroll">
+    <form class="add-form" onsubmit="location.href='money-management.html'; return false;" data-od-id="add-expense-form">
+      <div class="field" data-od-id="add-field-name">
+        <span class="field-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.8"><path d="M4 20h16"/><path d="M5 20V6h14v14"/><path d="M9 10h6M9 14h6"/></svg></span>
+        <input type="text" placeholder="Description">
+      </div>
+      <div class="field" data-od-id="add-field-amount">
+        <span class="field-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.8"><path d="M12 3v18M7 7l5-4 5 4M7 17l5 4 5-4"/></svg></span>
+        <input type="text" inputmode="decimal" placeholder="0.00 &euro;">
+      </div>
+      <div class="field" data-od-id="add-field-category">
+        <span class="field-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.8"><path d="M4 4h2l2 10h9l2-7H8"/><circle cx="9" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg></span>
+        <select aria-label="Category">
+          <option value="" disabled selected>Category</option>
+          <option>Home</option>
+          <option>Food</option>
+          <option>Work</option>
+          <option>Friends</option>
+          <option>Shopping</option>
+          <option>Transport</option>
+        </select>
+      </div>
+      <div class="field" data-od-id="add-field-date">
+        <span class="field-icon"><svg width="15" height="16" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
+        <input type="text" placeholder="16 April 2019">
+      </div>
+      <button type="submit" class="btn-green add-btn" data-od-id="add-expense-submit">Add Expense</button>
+    </form>
+  </div>
+
+  <nav class="tabbar" data-od-id="tabbar">
+    <div class="tabs-side">
+      <a class="tab" href="dashboard.html" data-od-id="tab-dashboard">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="tab active" href="money-management.html" data-od-id="tab-money">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6 10.5v3M18 10.5v3"/></svg>
+        <span>Money</span>
+      </a>
+    </div>
+    <div class="fab-slot"></div>
+    <div class="tabs-side">
+      <a class="tab" href="time-management.html" data-od-id="tab-time">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Time</span>
+      </a>
+    </div>
+    <a class="fab" href="money-management-3.html" aria-label="Add" data-od-id="fab">
+      <svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 0V20M0 10H20" stroke="#fff" stroke-width="3"/></svg>
+    </a>
+  </nav>
+</div>
+</body>
+</html>

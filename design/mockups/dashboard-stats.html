@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>businesshandler — Dashboard Stats</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .stats-inner { padding: 26px 39px 20px; }
+  .big-num { font-family: var(--font-family-body); font-weight: 500; font-size: 45px; line-height: 57px; text-transform: uppercase; color: var(--color-fg-black); }
+  .big-label { margin-top: 2px; font-family: var(--font-family-body); font-weight: 100; font-size: 12px; line-height: 15px; letter-spacing: 2.4px; text-transform: uppercase; color: var(--color-fg-black); }
+  .stat-rows { margin-top: 24px; }
+  .stat-line { display: flex; align-items: center; justify-content: space-between; height: 60px; border-bottom: 1px solid var(--color-divider); }
+  .stat-line .sl-l { font-family: var(--font-family-body); font-weight: 400; font-size: 14px; line-height: 17px; color: var(--color-fg-strong); }
+  .stat-line .sl-v { font-family: var(--font-family-body); font-weight: 500; font-size: 16px; line-height: 19px; color: var(--color-fg); }
+  .stat-line .sl-v.green { color: var(--color-accent-deep); }
+  .overview-btn { margin-top: 34px; }
+</style>
+</head>
+<body>
+<div class="screen" data-od-id="dashboard-stats-screen">
+  <header class="head-b" data-od-id="stats-header">
+    <div class="head-left">
+      <a class="icon-btn" href="dashboard.html" aria-label="Back" data-od-id="stats-back">
+        <svg width="11" height="18" viewBox="0 0 11 18" fill="none"><path d="M9.5 1L2 9l7.5 8" stroke="#181461" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span class="head-title" data-od-id="stats-title">Statistics</span>
+    </div>
+    <a class="icon-btn" href="dashboard-menu.html" aria-label="Profile" data-od-id="stats-user">
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#181461" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+    </a>
+  </header>
+
+  <div class="scroll">
+    <div class="stats-inner">
+      <div class="big-label" data-od-id="stats-total-label">Total Balance</div>
+      <div class="big-num" data-od-id="stats-total">8,795.00&euro;</div>
+
+      <div class="stat-rows" data-od-id="stats-rows">
+        <div class="stat-line" data-od-id="stat-line-income"><span class="sl-l">Income</span><span class="sl-v green">+3,240.00&euro;</span></div>
+        <div class="stat-line" data-od-id="stat-line-expenses"><span class="sl-l">Expenses</span><span class="sl-v">-1,345.00&euro;</span></div>
+        <div class="stat-line" data-od-id="stat-line-savings"><span class="sl-l">Savings</span><span class="sl-v green">+5,800.00&euro;</span></div>
+        <div class="stat-line" data-od-id="stat-line-budget"><span class="sl-l">Budget</span><span class="sl-v">900.00&euro;</span></div>
+      </div>
+
+      <a class="btn-green disabled overview-btn" href="#" data-od-id="stats-overview">Overview</a>
+    </div>
+  </div>
+
+  <nav class="tabbar" data-od-id="tabbar">
+    <div class="tabs-side">
+      <a class="tab active" href="dashboard.html" data-od-id="tab-dashboard">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="tab" href="money-management.html" data-od-id="tab-money">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6 10.5v3M18 10.5v3"/></svg>
+        <span>Money</span>
+      </a>
+    </div>
+    <div class="fab-slot"></div>
+    <div class="tabs-side">
+      <a class="tab" href="time-management.html" data-od-id="tab-time">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Time</span>
+      </a>
+    </div>
+    <a class="fab" href="money-management-3.html" aria-label="Add" data-od-id="fab">
+      <svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 0V20M0 10H20" stroke="#fff" stroke-width="3"/></svg>
+    </a>
+  </nav>
+</div>
+</body>
+</html>

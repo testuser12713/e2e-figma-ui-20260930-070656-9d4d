@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>businesshandler — Time Management</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tm-inner { padding: 24px 39px 20px; }
+  .appt-list { margin-top: 8px; }
+  .appt-row { display: flex; align-items: center; height: 64px; border-bottom: 1px solid var(--color-divider); }
+  .appt-date { width: 88px; font-family: var(--font-family-body); font-weight: 400; font-size: 12px; line-height: 18px; color: #1C1C1C66; }
+  .appt-title { flex: 1; font-family: var(--font-family); font-weight: 700; font-size: 14px; line-height: 17px; color: var(--color-fg-strong); }
+  .appt-actions { display: flex; align-items: center; gap: 12px; }
+  .appt-modify { font-family: var(--font-family); font-weight: 700; font-size: 14px; line-height: 17px; color: var(--color-fg); }
+  .add-btn { margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="screen" data-od-id="time-screen">
+  <header class="head-b" data-od-id="time-header">
+    <div class="head-left">
+      <a class="icon-btn" href="dashboard.html" aria-label="Back" data-od-id="time-back">
+        <svg width="11" height="18" viewBox="0 0 11 18" fill="none"><path d="M9.5 1L2 9l7.5 8" stroke="#181461" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span class="head-title" data-od-id="time-title">Time Management</span>
+    </div>
+    <a class="icon-btn" href="dashboard-menu.html" aria-label="Profile" data-od-id="time-user">
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#181461" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+    </a>
+  </header>
+
+  <div class="scroll">
+    <div class="tm-inner">
+      <div class="section-label" data-od-id="time-upcoming-label">Upcoming</div>
+
+      <div class="appt-list" data-od-id="time-appt-list">
+        <a class="appt-row" href="time-management-2.html" data-od-id="appt-meeting">
+          <div class="appt-date">14 Apr &middot; 09:30</div>
+          <div class="appt-title">Team meeting</div>
+          <div class="appt-actions">
+            <span class="appt-modify">Modify</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><path d="M4 20l4-1 11-11a2 2 0 0 0-3-3L5 16l-1 4Z"/></svg>
+          </div>
+        </a>
+        <a class="appt-row" href="time-management-2.html" data-od-id="appt-lunch">
+          <div class="appt-date">14 Apr &middot; 13:00</div>
+          <div class="appt-title">Lunch with client</div>
+          <div class="appt-actions">
+            <span class="appt-modify">Modify</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><path d="M4 20l4-1 11-11a2 2 0 0 0-3-3L5 16l-1 4Z"/></svg>
+          </div>
+        </a>
+        <a class="appt-row" href="time-management-2.html" data-od-id="appt-dentist">
+          <div class="appt-date">15 Apr &middot; 10:00</div>
+          <div class="appt-title">Dentist</div>
+          <div class="appt-actions">
+            <span class="appt-modify">Modify</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><path d="M4 20l4-1 11-11a2 2 0 0 0-3-3L5 16l-1 4Z"/></svg>
+          </div>
+        </a>
+        <a class="appt-row" href="time-management-2.html" data-od-id="appt-gym">
+          <div class="appt-date">16 Apr &middot; 15:30</div>
+          <div class="appt-title">Gym</div>
+          <div class="appt-actions">
+            <span class="appt-modify">Modify</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><path d="M4 20l4-1 11-11a2 2 0 0 0-3-3L5 16l-1 4Z"/></svg>
+          </div>
+        </a>
+      </div>
+
+      <a class="btn-green add-btn" href="time-management-3.html" data-od-id="time-add-appointment">Add Appointment</a>
+    </div>
+  </div>
+
+  <nav class="tabbar" data-od-id="tabbar">
+    <div class="tabs-side">
+      <a class="tab" href="dashboard.html" data-od-id="tab-dashboard">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="tab" href="money-management.html" data-od-id="tab-money">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6 10.5v3M18 10.5v3"/></svg>
+        <span>Money</span>
+      </a>
+    </div>
+    <div class="fab-slot"></div>
+    <div class="tabs-side">
+      <a class="tab active" href="time-management.html" data-od-id="tab-time">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Time</span>
+      </a>
+    </div>
+    <a class="fab" href="money-management-3.html" aria-label="Add" data-od-id="fab">
+      <svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 0V20M0 10H20" stroke="#fff" stroke-width="3"/></svg>
+    </a>
+  </nav>
+</div>
+</body>
+</html>

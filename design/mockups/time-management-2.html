@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>businesshandler — Time Management 2</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tm2-inner { padding: 18px 39px 20px; }
+  .appt-schedule { margin-top: 18px; }
+  .appt-slot { display: flex; align-items: flex-start; }
+  .appt-slot + .appt-slot { margin-top: 22px; }
+  .appt-slot .axis { width: 84px; flex: 0 0 84px; text-align: right; padding-right: 10px; padding-top: 18px; }
+  .appt-slot .card { flex: 1; margin-left: 0; }
+</style>
+</head>
+<body>
+<div class="screen" data-od-id="time-2-screen">
+  <header class="head-b" data-od-id="time-2-header">
+    <div class="head-left">
+      <a class="icon-btn" href="time-management.html" aria-label="Back" data-od-id="time-2-back">
+        <svg width="11" height="18" viewBox="0 0 11 18" fill="none"><path d="M9.5 1L2 9l7.5 8" stroke="#181461" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span class="head-title" data-od-id="time-2-title">Calendar</span>
+    </div>
+    <a class="icon-btn" href="dashboard-menu.html" aria-label="Profile" data-od-id="time-2-user">
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#181461" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+    </a>
+  </header>
+
+  <div class="scroll">
+    <div class="tm2-inner">
+      <div class="cal-head" data-od-id="cal-head">
+        <a class="cal-nav" href="time-management.html" aria-label="Previous" data-od-id="cal-prev">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <span data-od-id="cal-range">15-21 April 2019</span>
+        <a class="cal-nav" href="time-management-3.html" aria-label="Next" data-od-id="cal-next">
+          <svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1l6 6-6 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="cal-week" data-od-id="cal-week">
+        <div class="wd">S</div><div class="wd">M</div><div class="wd">T</div><div class="wd">W</div><div class="wd">T</div><div class="wd">F</div><div class="wd">S</div>
+      </div>
+      <div class="cal-days" data-od-id="cal-days">
+        <div class="day"><span class="num">15</span></div>
+        <div class="day"><span class="num">16</span></div>
+        <div class="day"><span class="num">17</span></div>
+        <div class="day active"><span class="num">18</span></div>
+        <div class="day"><span class="num">19</span></div>
+        <div class="day"><span class="num">20</span></div>
+        <div class="day"><span class="num">21</span></div>
+      </div>
+
+      <div class="segbar" data-od-id="time-2-tabs">
+        <span class="seg active" data-od-id="seg-upcoming">Upcoming</span>
+        <span class="seg" data-od-id="seg-past">Past</span>
+      </div>
+
+      <div class="appt-schedule" data-od-id="time-2-schedule">
+        <div class="appt-slot" data-od-id="appt-slot-10">
+          <div class="axis"><div class="tlabel">10 AM</div><div class="tline"></div></div>
+          <div class="appt-card card" data-od-id="appt-card-meeting">
+            <div class="appt-title">Team meeting</div>
+            <div class="appt-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>09:30 - 10:30</div>
+            <div class="appt-sub">With the design team</div>
+            <div class="appt-photo"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+          </div>
+        </div>
+        <div class="appt-slot" data-od-id="appt-slot-12">
+          <div class="axis"><div class="tlabel">12 AM</div><div class="tline"></div></div>
+          <div class="appt-card card" data-od-id="appt-card-lunch">
+            <div class="appt-title">Lunch with client</div>
+            <div class="appt-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>12:00 - 13:30</div>
+            <div class="appt-sub">Office cafeteria</div>
+            <div class="appt-photo"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+          </div>
+        </div>
+        <div class="appt-slot" data-od-id="appt-slot-15">
+          <div class="axis"><div class="tlabel">15 AM</div><div class="tline"></div></div>
+          <div class="appt-card card" data-od-id="appt-card-gym">
+            <div class="appt-title">Gym</div>
+            <div class="appt-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>15:30 - 16:30</div>
+            <div class="appt-sub">Fitness studio</div>
+            <div class="appt-photo"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="tabbar" data-od-id="tabbar">
+    <div class="tabs-side">
+      <a class="tab" href="dashboard.html" data-od-id="tab-dashboard">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="tab" href="money-management.html" data-od-id="tab-money">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6 10.5v3M18 10.5v3"/></svg>
+        <span>Money</span>
+      </a>
+    </div>
+    <div class="fab-slot"></div>
+    <div class="tabs-side">
+      <a class="tab active" href="time-management.html" data-od-id="tab-time">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Time</span>
+      </a>
+    </div>
+    <a class="fab" href="money-management-3.html" aria-label="Add" data-od-id="fab">
+      <svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 0V20M0 10H20" stroke="#fff" stroke-width="3"/></svg>
+    </a>
+  </nav>
+</div>
+</body>
+</html>

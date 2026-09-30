@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>businesshandler — Money Management</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .qpanel { margin: -40px auto 0; position: relative; z-index: 2; }
+  .tx-title { margin: 28px 39px 0 39px; }
+  .tx-list { margin: 14px 39px 0 39px; }
+</style>
+</head>
+<body>
+<div class="screen" data-od-id="money-screen">
+  <div class="scroll">
+    <section class="hero-card" data-od-id="money-hero">
+      <div class="hero-art">
+        <svg width="414" height="406" viewBox="0 0 414 406" preserveAspectRatio="xMidYMid slice">
+          <rect width="414" height="406" fill="#FFFFFF"/>
+          <circle cx="60" cy="90" r="120" fill="#ECF1FA"/>
+          <circle cx="360" cy="180" r="150" fill="#DCE5F4"/>
+          <path d="M0 340 Q207 240 414 340 V406 H0 Z" fill="#ECF1FA"/>
+          <rect x="150" y="70" width="120" height="120" rx="16" fill="#FFFFFF" stroke="#6CC57C" stroke-width="3"/>
+          <path d="M180 120h60M180 140h40" stroke="#179F2F" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="210" cy="160" r="12" fill="#61D27C"/>
+        </svg>
+      </div>
+      <a class="icon-btn" href="dashboard.html" aria-label="Back" style="position:absolute;left:22px;top:25px;" data-od-id="money-back">
+        <svg width="11" height="18" viewBox="0 0 11 18" fill="none"><path d="M9.5 1L2 9l7.5 8" stroke="#181461" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="hero-avatar" data-od-id="money-hero-avatar">R</div>
+      <div class="hero-label" data-od-id="money-hero-label">Monthly Expenses</div>
+      <div class="hero-amount" data-od-id="money-hero-amount">1,345.00&euro;</div>
+      <div class="hero-bottom-arc"></div>
+    </section>
+
+    <div class="qpanel" data-od-id="money-quick-categories">
+      <div class="qpanel-title section-label" data-od-id="money-qc-title">Quick Categories</div>
+      <div class="qgrid">
+        <a class="qtile" href="money-management-3.html" data-od-id="cat-home">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg>
+        </a>
+        <a class="qtile" href="money-management-3.html" data-od-id="cat-food">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6"><path d="M4 4h2l2 10h9l2-7H8"/><circle cx="9" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg>
+        </a>
+        <a class="qtile" href="money-management-3.html" data-od-id="cat-work">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+        </a>
+        <a class="qtile square" href="money-management-3.html" data-od-id="cat-friends">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.4-1.4-4-3.5-4.7"/></svg>
+        </a>
+        <a class="qtile square" href="money-management-3.html" data-od-id="cat-shopping">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6"><path d="M6 7h12l1 13H5L6 7Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+        </a>
+        <a class="qtile square" href="money-management-3.html" data-od-id="cat-gas">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6"><path d="M4 21V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v17M3 21h13"/><path d="M6 8h7M6 12h7M6 16h4M15 6l3-1 1 1v2a1.6 1.6 0 0 1-2 1.6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="tx-title section-label" data-od-id="money-tx-title">Recent Transactions</div>
+
+    <div class="tx-list" data-od-id="money-tx-list">
+      <a class="tx-row" href="money-management-2.html" data-od-id="tx-row-salary">
+        <div class="tx-ill"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#179F2F" stroke-width="1.8"><path d="M12 3v18M7 7l5-4 5 4M7 17l5 4 5-4"/></svg></div>
+        <div class="tx-col"><div class="tx-cat">Income</div><div class="tx-desc">Monthly payroll deposit</div><div class="tx-date">10 Apr</div></div>
+        <div class="tx-amt">+2,450.00&euro;</div>
+      </a>
+      <a class="tx-row" href="money-management-2.html" data-od-id="tx-row-groceries">
+        <div class="tx-ill"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.8"><path d="M4 4h2l2 10h9l2-7H8"/><circle cx="9" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg></div>
+        <div class="tx-col"><div class="tx-cat">Groceries</div><div class="tx-desc">Weekly supermarket run</div><div class="tx-date">12 Apr</div></div>
+        <div class="tx-amt">-48.20&euro;</div>
+      </a>
+      <a class="tx-row" href="money-management-2.html" data-od-id="tx-row-rent">
+        <div class="tx-ill"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg></div>
+        <div class="tx-col"><div class="tx-cat">Housing</div><div class="tx-desc">Apartment rent</div><div class="tx-date">01 Apr</div></div>
+        <div class="tx-amt">-890.00&euro;</div>
+      </a>
+      <a class="tx-row" href="money-management-2.html" data-od-id="tx-row-coffee">
+        <div class="tx-ill"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.8"><path d="M5 9h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9Z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2"/></svg></div>
+        <div class="tx-col"><div class="tx-cat">Food</div><div class="tx-desc">Caf&eacute; coffee</div><div class="tx-date">11 Apr</div></div>
+        <div class="tx-amt">-4.50&euro;</div>
+      </a>
+    </div>
+  </div>
+
+  <nav class="tabbar" data-od-id="tabbar">
+    <div class="tabs-side">
+      <a class="tab" href="dashboard.html" data-od-id="tab-dashboard">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="tab active" href="money-management.html" data-od-id="tab-money">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6 10.5v3M18 10.5v3"/></svg>
+        <span>Money</span>
+      </a>
+    </div>
+    <div class="fab-slot"></div>
+    <div class="tabs-side">
+      <a class="tab" href="time-management.html" data-od-id="tab-time">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Time</span>
+      </a>
+    </div>
+    <a class="fab" href="money-management-3.html" aria-label="Add" data-od-id="fab">
+      <svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 0V20M0 10H20" stroke="#fff" stroke-width="3"/></svg>
+    </a>
+  </nav>
+</div>
+</body>
+</html>

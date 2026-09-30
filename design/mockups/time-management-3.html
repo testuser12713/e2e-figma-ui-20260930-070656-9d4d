@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>businesshandler — Time Management 3</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .tm3-inner { padding: 24px 39px 20px; }
+  .qa-list { margin-top: 8px; }
+  .add-btn { margin-top: 28px; }
+</style>
+</head>
+<body>
+<div class="screen" data-od-id="time-3-screen">
+  <header class="head-b" data-od-id="time-3-header">
+    <div class="head-left">
+      <a class="icon-btn" href="time-management.html" aria-label="Back" data-od-id="time-3-back">
+        <svg width="18" height="15" viewBox="0 0 18 15" fill="none"><path d="M7 1L1 7.5 7 14M1 7.5h16" stroke="#181461" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span class="head-title" data-od-id="time-3-title">Appointments</span>
+    </div>
+    <a class="icon-btn" href="dashboard-menu.html" aria-label="Profile" data-od-id="time-3-user">
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#181461" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+    </a>
+  </header>
+
+  <div class="scroll">
+    <div class="tm3-inner">
+      <div class="section-label" data-od-id="time-3-list-label">Quick add</div>
+
+      <div class="qa-list" data-od-id="time-3-qa-list">
+        <a class="qa-row" href="time-management.html" data-od-id="qa-row-dentist">
+          <div class="qa-img"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.6"><path d="M5 7c0-2 1.5-3 3-3 1.5 0 2.5 1 4 3 1.5-2 2.5-3 4-3 1.5 0 3 1 3 3 0 2-1.5 4-2 7H7c-.5-3-2-5-2-7Z"/></svg></div>
+          <div class="qa-col"><div class="qa-title">Dentist</div><div class="qa-sub">Next available Thu 18 Apr</div></div>
+          <div class="qa-dots"><span></span><span></span><span></span></div>
+        </a>
+        <a class="qa-row" href="time-management.html" data-od-id="qa-row-meeting">
+          <div class="qa-img"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.6"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg></div>
+          <div class="qa-col"><div class="qa-title">Team meeting</div><div class="qa-sub">Weekly sync</div></div>
+          <div class="qa-dots"><span></span><span></span><span></span></div>
+        </a>
+        <a class="qa-row" href="time-management.html" data-od-id="qa-row-lunch">
+          <div class="qa-img"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.6"><path d="M4 4h2l2 10h9l2-7H8"/><circle cx="9" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg></div>
+          <div class="qa-col"><div class="qa-title">Lunch with client</div><div class="qa-sub">Repeating event</div></div>
+          <div class="qa-dots"><span></span><span></span><span></span></div>
+        </a>
+        <a class="qa-row" href="time-management.html" data-od-id="qa-row-gym">
+          <div class="qa-img"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#23233C" stroke-width="1.6"><path d="M6 8v8M18 8v8M6 12h12M9 8L6 12l3 4M15 8l3 4-3 4"/></svg></div>
+          <div class="qa-col"><div class="qa-title">Gym</div><div class="qa-sub">Personal training</div></div>
+          <div class="qa-dots"><span></span><span></span><span></span></div>
+        </a>
+      </div>
+
+      <a class="btn-green add-btn" href="time-management.html" data-od-id="time-3-add-new">Add a new appointment</a>
+    </div>
+  </div>
+
+  <nav class="tabbar" data-od-id="tabbar">
+    <div class="tabs-side">
+      <a class="tab" href="dashboard.html" data-od-id="tab-dashboard">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="tab" href="money-management.html" data-od-id="tab-money">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.4"/><path d="M6 10.5v3M18 10.5v3"/></svg>
+        <span>Money</span>
+      </a>
+    </div>
+    <div class="fab-slot"></div>
+    <div class="tabs-side">
+      <a class="tab active" href="time-management.html" data-od-id="tab-time">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span>Time</span>
+      </a>
+    </div>
+    <a class="fab" href="money-management-3.html" aria-label="Add" data-od-id="fab">
+      <svg viewBox="0 0 20 20" width="20" height="20"><path d="M10 0V20M0 10H20" stroke="#fff" stroke-width="3"/></svg>
+    </a>
+  </nav>
+</div>
+</body>
+</html>
