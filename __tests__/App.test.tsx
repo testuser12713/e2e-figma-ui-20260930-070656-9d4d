@@ -35,7 +35,7 @@ describe('App', () => {
 
     fireEvent.press(await screen.findByTestId('tab-money'));
 
-    expect(await screen.findByText('Money Management')).toBeOnTheScreen();
+    expect(await screen.findByTestId('money-add-button')).toBeOnTheScreen();
     expect(screen.getByTestId('tab-money')).toBeSelected();
   });
 
