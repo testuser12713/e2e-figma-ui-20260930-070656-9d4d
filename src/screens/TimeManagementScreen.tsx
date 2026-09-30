@@ -56,10 +56,20 @@ export default function TimeManagementScreen({ navigation }: Props) {
               style={styles.backIcon}
             />
           </Pressable>
-          <Image
-            source={require('../../design/figma/assets/noun-user-1335326.png')}
-            style={styles.userIcon}
-          />
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Profile"
+            testID="profile-button"
+            onPress={() =>
+              navigation.getParent()?.navigate('DashboardTab', { screen: 'DashboardMenu' })
+            }
+            hitSlop={12}
+          >
+            <Image
+              source={require('../../design/figma/assets/noun-user-1335326.png')}
+              style={styles.userIcon}
+            />
+          </Pressable>
         </View>
 
         <Text style={styles.title}>My Appointments</Text>
@@ -143,16 +153,6 @@ export default function TimeManagementScreen({ navigation }: Props) {
           style={styles.primaryButton}
         >
           <Text style={styles.primaryButtonText}>Add a new appointment</Text>
-        </Pressable>
-
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel="Overview"
-          testID="overview-button"
-          disabled
-          style={styles.overviewButton}
-        >
-          <Text style={styles.primaryButtonText}>Overview</Text>
         </Pressable>
       </ScrollView>
     </View>
@@ -291,15 +291,6 @@ const styles = StyleSheet.create({
     height: 43,
     borderRadius: radii.md,
     backgroundColor: colors.accent,
-    alignItems: 'center',
-    justifyContent: 'center',
-    ...shadow,
-  },
-  overviewButton: {
-    marginTop: 24,
-    height: 43,
-    borderRadius: radii.md,
-    backgroundColor: colors.accentDim,
     alignItems: 'center',
     justifyContent: 'center',
     ...shadow,

@@ -15,9 +15,10 @@ jest.mock('react-native-safe-area-context', () => ({
 
 const navigate = jest.fn();
 const goBack = jest.fn();
+const parentNavigate = jest.fn();
 
 const props = {
-  navigation: { navigate, goBack },
+  navigation: { navigate, goBack, getParent: () => ({ navigate: parentNavigate }) },
   route: { key: 'TimeManagement', name: 'TimeManagement', params: undefined },
 } as never;
 
@@ -25,6 +26,7 @@ describe('TimeManagementScreen', () => {
   beforeEach(() => {
     navigate.mockClear();
     goBack.mockClear();
+    parentNavigate.mockClear();
   });
 
   it('renders the title and the search field', async () => {
@@ -66,5 +68,20 @@ describe('TimeManagementScreen', () => {
     await waitFor(() => {
       expect(screen.queryByText('Dentist - Clara Odding')).toBeNull();
     });
+  });
+
+  it('opens the menu when the profile icon is pressed', async () => {
+    await render(<TimeManagementScreen {...(props as any)} />);
+
+    fireEvent.press(screen.getByTestId('profile-button'));
+
+    expect(parentNavigate).toHaveBeenCalledWith('DashboardTab', { screen: 'DashboardMenu' });
+  });
+
+  it('does not render an Overview button', async () => {
+    await render(<TimeManagementScreen {...(props as any)} />);
+
+    expect(screen.queryByTestId('overview-button')).toBeNull();
+    expect(screen.queryByText('Overview')).toBeNull();
   });
 });
