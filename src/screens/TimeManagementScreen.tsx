@@ -120,10 +120,6 @@ export default function TimeManagementScreen({ navigation }: Props) {
                   <Text style={styles.name}>
                     {`${appointment.specialty} - ${appointment.name}`}
                   </Text>
-                  <Image
-                    source={require('../../design/figma/assets/noun-info-1174604.png')}
-                    style={styles.infoIcon}
-                  />
                 </View>
                 <Pressable
                   accessibilityRole="button"
@@ -134,10 +130,6 @@ export default function TimeManagementScreen({ navigation }: Props) {
                   hitSlop={8}
                 >
                   <Text style={styles.modifyText}>Modify</Text>
-                  <Image
-                    source={require('../../design/figma/assets/noun-pencil-2174975.png')}
-                    style={styles.pencilIcon}
-                  />
                 </Pressable>
               </View>
             </View>
@@ -260,12 +252,6 @@ const styles = StyleSheet.create({
     ...typography.text14,
     color: colors.fgStrong,
   },
-  infoIcon: {
-    width: 12,
-    height: 12,
-    marginLeft: 8,
-    resizeMode: 'contain',
-  },
   modify: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -274,12 +260,6 @@ const styles = StyleSheet.create({
   modifyText: {
     ...typography.text14,
     color: colors.secondary,
-  },
-  pencilIcon: {
-    width: 12,
-    height: 12,
-    marginLeft: 6,
-    resizeMode: 'contain',
   },
   divider: {
     height: StyleSheet.hairlineWidth,
