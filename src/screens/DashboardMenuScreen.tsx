@@ -50,12 +50,14 @@ export default function DashboardMenuScreen({ navigation }: Props) {
         <Ionicons
           name="menu"
           size={18}
-          color={colors.onAccent}
+          color={colors.chevron}
           style={styles.headerMenuIcon}
         />
         <Text style={styles.headerTitle}>Dashboard</Text>
-        <Image
-          source={require(`${ASSETS}/noun-user-1335326.png`)}
+        <Ionicons
+          name="person-circle-outline"
+          size={27}
+          color={colors.chevron}
           style={styles.headerUserIcon}
         />
       </View>
@@ -183,7 +185,7 @@ export default function DashboardMenuScreen({ navigation }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.bgTint,
+    backgroundColor: colors.bg,
     overflow: 'hidden',
   },
 
@@ -193,7 +195,7 @@ const styles = StyleSheet.create({
     left: 0,
     width: 414,
     height: 126,
-    backgroundColor: colors.accent,
+    backgroundColor: colors.surface,
     ...SHADOW_HEADER,
   },
   headerMenuIcon: {
@@ -206,7 +208,7 @@ const styles = StyleSheet.create({
     left: 18,
     top: 62,
     ...typography.screenTitle,
-    color: colors.onAccent,
+    color: colors.fg,
   },
   headerUserIcon: {
     position: 'absolute',
