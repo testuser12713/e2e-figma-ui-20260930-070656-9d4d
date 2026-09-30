@@ -1,4 +1,3 @@
-import { Ionicons } from '@expo/vector-icons';
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import type { CompositeScreenProps } from '@react-navigation/native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -26,6 +25,7 @@ const MONEY_ILLUSTRATION = require('../../design/figma/assets/illustration-118x1
 const FOOD_ILLUSTRATION = require('../../design/figma/assets/undraw-personal-site-xyd1.png');
 const APP_ILLUSTRATION = require('../../design/figma/assets/illustration-120x133.png');
 const USER_ICON = require('../../design/figma/assets/noun-user-1335326.png');
+const SEARCH_ICON = require('../../design/figma/assets/search-1.png');
 
 type CardProps = {
   testID: string;
@@ -78,7 +78,9 @@ export default function DashboardScreen({ navigation }: Props) {
             style={styles.menuButton}
             hitSlop={10}
           >
-            <Ionicons name="menu" size={18} color={colors.onAccent} />
+            <View style={styles.menuBar} />
+            <View style={styles.menuBar} />
+            <View style={styles.menuBar} />
           </Pressable>
           <Text style={styles.headerTitle}>Dashboard</Text>
           <Image source={USER_ICON} style={styles.userIcon} resizeMode="contain" />
@@ -92,7 +94,7 @@ export default function DashboardScreen({ navigation }: Props) {
             placeholderTextColor="#1C1C1C33"
             style={styles.searchInput}
           />
-          <Ionicons name="search" size={16} color={colors.fgStrong} style={styles.searchIcon} />
+          <Image source={SEARCH_ICON} style={styles.searchIcon} resizeMode="contain" />
         </View>
 
         <View style={styles.grid}>
@@ -162,6 +164,13 @@ const styles = StyleSheet.create({
     top: 33,
     width: 18,
     height: 15,
+    justifyContent: 'space-between',
+  },
+  menuBar: {
+    width: 18,
+    height: 2,
+    borderRadius: 1,
+    backgroundColor: colors.onAccent,
   },
   headerTitle: {
     ...typography.screenTitle,
@@ -199,6 +208,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 14,
     top: 13,
+    width: 16,
+    height: 16,
   },
   grid: {
     marginTop: 37,

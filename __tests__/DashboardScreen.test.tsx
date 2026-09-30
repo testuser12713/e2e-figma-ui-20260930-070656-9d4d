@@ -1,13 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
-jest.mock('@expo/vector-icons', () => {
-  const React = require('react');
-  const { Text } = require('react-native');
-  return {
-    Ionicons: ({ name }: { name: string }) => React.createElement(Text, null, name),
-  };
-});
-
 import DashboardScreen from '../src/screens/DashboardScreen';
 
 const makeNavigation = () => ({
