@@ -49,20 +49,32 @@ describe('MoneyManagementScreen', () => {
     await renderScreen();
 
     expect(screen.getByText('Quick Categories')).toBeOnTheScreen();
-    expect(screen.getByLabelText('Home')).toBeOnTheScreen();
-    expect(screen.getByLabelText('Food')).toBeOnTheScreen();
-    expect(screen.getByLabelText('Work')).toBeOnTheScreen();
-    expect(screen.getByLabelText('Friends')).toBeOnTheScreen();
-    expect(screen.getByLabelText('Shopping')).toBeOnTheScreen();
-    expect(screen.getByLabelText('Gas')).toBeOnTheScreen();
+    expect(screen.getByTestId('cat-home')).toBeOnTheScreen();
+    expect(screen.getByTestId('cat-food')).toBeOnTheScreen();
+    expect(screen.getByTestId('cat-work')).toBeOnTheScreen();
+    expect(screen.getByTestId('cat-friends')).toBeOnTheScreen();
+    expect(screen.getByTestId('cat-shopping')).toBeOnTheScreen();
+    expect(screen.getByTestId('cat-gas')).toBeOnTheScreen();
   });
 
-  it('navigates to the weekly report when the report block is pressed', async () => {
+  it('renders the Recent Transactions list from sample data', async () => {
     await renderScreen();
 
-    fireEvent.press(screen.getByTestId('money-report-button'));
+    expect(screen.getByText('Recent Transactions')).toBeOnTheScreen();
+    expect(screen.getByTestId('tx-row-salary')).toBeOnTheScreen();
+    expect(screen.getByTestId('tx-row-groceries')).toBeOnTheScreen();
+    expect(screen.getByTestId('tx-row-rent')).toBeOnTheScreen();
+    expect(screen.getByTestId('tx-row-coffee')).toBeOnTheScreen();
+    expect(screen.getByText('+2,450.00€')).toBeOnTheScreen();
+    expect(screen.getByText('-890.00€')).toBeOnTheScreen();
+  });
 
-    expect(mockNavigate).toHaveBeenCalledWith('MoneyManagement2');
+  it('navigates to the add form when a category tile is pressed', async () => {
+    await renderScreen();
+
+    fireEvent.press(screen.getByTestId('cat-home'));
+
+    expect(mockNavigate).toHaveBeenCalledWith('MoneyManagement3');
   });
 
   it('navigates to the add form when the add button is pressed', async () => {
@@ -71,5 +83,13 @@ describe('MoneyManagementScreen', () => {
     fireEvent.press(screen.getByTestId('money-add-button'));
 
     expect(mockNavigate).toHaveBeenCalledWith('MoneyManagement3');
+  });
+
+  it('navigates to the weekly report when a transaction row is pressed', async () => {
+    await renderScreen();
+
+    fireEvent.press(screen.getByTestId('tx-row-salary'));
+
+    expect(mockNavigate).toHaveBeenCalledWith('MoneyManagement2');
   });
 });
