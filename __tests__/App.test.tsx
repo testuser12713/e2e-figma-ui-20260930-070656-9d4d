@@ -44,7 +44,7 @@ describe('App', () => {
 
     fireEvent.press(await screen.findByTestId('tab-time'));
 
-    expect(await screen.findByText('Time Management')).toBeOnTheScreen();
+    expect(await screen.findByText('My Appointments')).toBeOnTheScreen();
     expect(screen.getByTestId('tab-time')).toBeSelected();
   });
 });
