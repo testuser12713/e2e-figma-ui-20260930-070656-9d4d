@@ -13,16 +13,38 @@ const DAYS = [15, 16, 17, 18, 19, 20, 21];
 const MONTH_LABEL = 'April 2019';
 const WEEK_RANGE_LABEL = '15-21 April 2019';
 
-const APPOINTMENTS = ['10 AM', '12 AM', '15 AM'].map((time, index) => ({
-  id: String(index + 1),
-  time,
-  cardTop: 66 + index * 135,
-  timeTop: 71 + index * 135,
-  tickTop: 153 + index * 135,
-  title: 'Work',
-  subtitle: 'Besprechung',
-  range: '10AM - 11AM',
-}));
+const APPOINTMENTS = [
+  {
+    id: '1',
+    time: '10 AM',
+    cardTop: 66,
+    timeTop: 71,
+    tickTop: 153,
+    title: 'Team meeting',
+    subtitle: 'With the design team',
+    range: '09:30 - 10:30',
+  },
+  {
+    id: '2',
+    time: '12 AM',
+    cardTop: 201,
+    timeTop: 206,
+    tickTop: 288,
+    title: 'Lunch with client',
+    subtitle: 'Office cafeteria',
+    range: '12:00 - 13:30',
+  },
+  {
+    id: '3',
+    time: '15 AM',
+    cardTop: 336,
+    timeTop: 341,
+    tickTop: 423,
+    title: 'Gym',
+    subtitle: 'Fitness studio',
+    range: '15:30 - 16:30',
+  },
+];
 
 function ClockIcon({ size = 11, color = colors.secondary }: { size?: number; color?: string }) {
   const center = size / 2;
@@ -55,7 +77,7 @@ export default function TimeManagement2Screen({ navigation }: Props) {
             style={styles.backIcon}
           />
         </Pressable>
-        <Text style={styles.title}>My Appointments</Text>
+        <Text style={styles.title}>Calendar</Text>
 
         <View style={styles.weekRangeRow}>
           <Image
