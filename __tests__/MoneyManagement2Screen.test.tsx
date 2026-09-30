@@ -22,33 +22,39 @@ describe('MoneyManagement2Screen', () => {
     goBack.mockClear();
   });
 
-  it('renders the weekly report heading and legend', async () => {
+  it('renders the Transactions header and controls', async () => {
     await render(<MoneyManagement2Screen navigation={navigation} route={route} />);
 
-    expect(screen.getByText('weekly report')).toBeOnTheScreen();
-    expect(screen.getByText('expenses')).toBeOnTheScreen();
-    expect(screen.getByText('deposit')).toBeOnTheScreen();
+    expect(screen.getByText('Transactions')).toBeOnTheScreen();
+    expect(screen.getByText('This month')).toBeOnTheScreen();
+    expect(screen.getByText('All categories')).toBeOnTheScreen();
+    expect(screen.getByPlaceholderText('Search')).toBeOnTheScreen();
   });
 
-  it('renders the sample expense entries', async () => {
+  it('renders the sample transaction entries', async () => {
     await render(<MoneyManagement2Screen navigation={navigation} route={route} />);
 
-    expect(screen.getByText('movie')).toBeOnTheScreen();
-    expect(screen.getByText('Spend On Fun Mall Cinema')).toBeOnTheScreen();
-    expect(screen.getByText('23.00€')).toBeOnTheScreen();
+    expect(screen.getByText('Income')).toBeOnTheScreen();
+    expect(screen.getByText('Monthly payroll deposit')).toBeOnTheScreen();
+    expect(screen.getByText('+2,450.00€')).toBeOnTheScreen();
 
-    expect(screen.getByText('coffee')).toBeOnTheScreen();
-    expect(screen.getByText('Spend On Starbucks')).toBeOnTheScreen();
-    expect(screen.getByText('13.00€')).toBeOnTheScreen();
+    expect(screen.getByText('Groceries')).toBeOnTheScreen();
+    expect(screen.getByText('Weekly supermarket run')).toBeOnTheScreen();
+    expect(screen.getByText('-48.20€')).toBeOnTheScreen();
 
-    expect(screen.getAllByText('shop')).toHaveLength(2);
-    expect(screen.getAllByText('Spend On Super Market')).toHaveLength(2);
+    expect(screen.getByText('Transport')).toBeOnTheScreen();
+    expect(screen.getByText('Train ticket')).toBeOnTheScreen();
+    expect(screen.getByText('-12.80€')).toBeOnTheScreen();
+
+    expect(screen.getByText('Housing')).toBeOnTheScreen();
+    expect(screen.getByText('Apartment rent')).toBeOnTheScreen();
+    expect(screen.getByText('-890.00€')).toBeOnTheScreen();
   });
 
   it('navigates back to the Money overview when the back button is pressed', async () => {
     await render(<MoneyManagement2Screen navigation={navigation} route={route} />);
 
-    fireEvent.press(screen.getByTestId('money-management-2-back'));
+    fireEvent.press(screen.getByTestId('money-2-back'));
 
     expect(goBack).toHaveBeenCalledTimes(1);
   });
