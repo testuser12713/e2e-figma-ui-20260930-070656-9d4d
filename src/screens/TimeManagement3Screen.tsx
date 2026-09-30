@@ -54,7 +54,7 @@ export default function TimeManagement3Screen({ navigation }: Props) {
             hitSlop={12}
             style={styles.headerIconButton}
           >
-            <Ionicons name="chevron-back" size={18} color={colors.chevron} />
+            <Ionicons name="menu-outline" size={18} color={colors.chevron} />
           </Pressable>
           <Pressable
             accessibilityRole="button"
