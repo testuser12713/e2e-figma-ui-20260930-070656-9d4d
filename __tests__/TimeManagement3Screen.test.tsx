@@ -60,4 +60,13 @@ describe('TimeManagement3Screen', () => {
 
     expect(mockGoBack).toHaveBeenCalled();
   });
+
+  it('exposes accessible back and profile header controls', async () => {
+    await render(<TimeManagement3Screen navigation={navigation} route={route} />);
+
+    expect(screen.getByRole('button', { name: 'Back' })).toBeOnTheScreen();
+    expect(screen.getByRole('button', { name: 'Profile' })).toBeOnTheScreen();
+
+    fireEvent.press(screen.getByTestId('time3-user-button'));
+  });
 });

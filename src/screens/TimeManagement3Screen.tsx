@@ -54,9 +54,17 @@ export default function TimeManagement3Screen({ navigation }: Props) {
             hitSlop={12}
             style={styles.headerIconButton}
           >
-            <Ionicons name="menu-outline" size={18} color={colors.chevron} />
+            <Ionicons name="chevron-back" size={18} color={colors.chevron} />
           </Pressable>
-          <Image source={userIcon} style={styles.userIcon} />
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Profile"
+            testID="time3-user-button"
+            onPress={() => {}}
+            hitSlop={8}
+          >
+            <Image source={userIcon} style={styles.userIcon} />
+          </Pressable>
         </View>
         <Text style={styles.title}>Add an appointment</Text>
       </View>
